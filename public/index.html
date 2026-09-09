@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
+  
+  <title>Kamran Shamsi & Dr. Amna Ubaid | Royal Wedding Invitation</title>
+  <meta name="description" content="You are cordially invited to celebrate the Wedding Reception Ceremony of Kamran Shamsi & Dr. Amna Ubaid on Thursday, 29th October 2026 at Ranchi Club, Ranchi." />
+  
+  <!-- Open Graph / WhatsApp Preview Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kamran Shamsi & Dr. Amna Ubaid | Royal Wedding Reception" />
+  <meta property="og:description" content="Insha Allah, join us to celebrate the Wedding Reception on Thursday, 29th October 2026 at Ranchi Club, Main Road, Ranchi." />
+  <meta property="og:image" content="images/royal_floral_arch.jpg" />
+  <meta property="og:url" content="https://kamran-weds-amna.pages.dev" />
+  
+  <link rel="icon" type="image/jpeg" href="images/gold_wax_seal_ak.jpg" />
+  <link rel="apple-touch-icon" href="images/gold_wax_seal_ak.jpg" />
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- ========================================================================
+       AMBIENT CANVAS (Falling Ivory Petals & Gold Dust)
+       ======================================================================== -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- ========================================================================
+       BACKGROUND MUSIC
+       ======================================================================== -->
+  <audio id="weddingAudio" loop preload="auto">
+    <source src="media/bg-music.mp3" type="audio/mp3" />
+  </audio>
+
+  <!-- Floating Audio Player Button -->
+  <div id="musicBtn" class="music-btn paused" title="Play Wedding Music" style="display: none;">
+    <div class="music-waves">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       ROYAL ENVELOPE / WAX SEAL OPENING OVERLAY
+       ======================================================================== -->
+  <div id="envelopeOverlay" class="envelope-overlay">
+    <div id="envelopeCard" class="envelope-card">
+      
+      <!-- Ornate Gold Corner Flourishes -->
+      <svg class="envelope-corner corner-tl" viewBox="0 0 50 50" fill="none" stroke="#C5A059" stroke-width="1.2">
+        <path d="M5,45 V15 Q5,5 15,5 H45 M10,40 V18 Q10,10 18,10 H40" />
+        <circle cx="12" cy="12" r="2" fill="#C5A059" />
+      </svg>
+      <svg class="envelope-corner corner-tr" viewBox="0 0 50 50" fill="none" stroke="#C5A059" stroke-width="1.2">
+        <path d="M5,45 V15 Q5,5 15,5 H45 M10,40 V18 Q10,10 18,10 H40" />
+        <circle cx="12" cy="12" r="2" fill="#C5A059" />
+      </svg>
+      <svg class="envelope-corner corner-bl" viewBox="0 0 50 50" fill="none" stroke="#C5A059" stroke-width="1.2">
+        <path d="M5,45 V15 Q5,5 15,5 H45 M10,40 V18 Q10,10 18,10 H40" />
+        <circle cx="12" cy="12" r="2" fill="#C5A059" />
+      </svg>
+      <svg class="envelope-corner corner-br" viewBox="0 0 50 50" fill="none" stroke="#C5A059" stroke-width="1.2">
+        <path d="M5,45 V15 Q5,5 15,5 H45 M10,40 V18 Q10,10 18,10 H40" />
+        <circle cx="12" cy="12" r="2" fill="#C5A059" />
+      </svg>
+
+      <p class="envelope-bismillah">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+      <p class="envelope-subtitle">ROYAL WEDDING INVITATION</p>
+      
+      <!-- Wax Seal Stamp -->
+      <div class="envelope-seal-wrap">
+        <img src="images/gold_wax_seal_ak.jpg" alt="A & K Royal Wax Seal" class="envelope-seal-img" />
+      </div>
+
+      <h1 class="envelope-couple gold-text">Kamran &amp; Amna</h1>
+      
+      <div class="envelope-tap-prompt">
+        <span class="envelope-tap-label">✦ TAP TO UNSEAL INVITATION ✦</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MAIN INVITATION CONTAINER (MOBILE-FIRST LUXURY)
+       ======================================================================== -->
+  <main class="app-container">
+
+    <!-- ----------------------------------------------------------------------
+         HERO SECTION: DIVINE INVOCATION & THE COUPLE
+         ---------------------------------------------------------------------- -->
+    <section class="hero-section">
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        
+        <!-- Divine Bismillah Calligraphy -->
+        <div class="bismillah-wrap fade-in-up">
+          <p class="bismillah-arabic">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</p>
+          <p class="bismillah-english">IN THE NAME OF ALLAH, THE MOST BENEFICENT &amp; MERCIFUL</p>
+        </div>
+
+        <p class="insha-allah-badge fade-in-up">"In Sha Allah to be solemnized as per programme"</p>
+
+        <!-- Remembrance & Invisible Presence of Grandparents -->
+        <p class="parents-blessings fade-in-up">
+          With Great Blessings &amp; invisible presence of my parents<br />
+          <span>Late M. S. Shamsi &amp; Late Kulsum Shamsi</span>
+        </p>
+
+        <!-- Monogram -->
+        <div class="royal-monogram-ring fade-in-up">
+          <span class="monogram-text gold-text">A &amp; K</span>
+        </div>
+
+        <p class="together-families fade-in-up">TOGETHER WITH THEIR FAMILIES</p>
+
+        <!-- Couple Names (Matching Reference Moodboard 03) -->
+        <div class="couple-hero-title fade-in-up">
+          <h2 class="hero-name gold-text">AMNA</h2>
+          <span class="hero-ampersand">&amp;</span>
+          <h2 class="hero-name gold-text">KAMRAN</h2>
+        </div>
+
+        <p class="hero-tagline fade-in-up">
+          Requesting the honour of your presence to celebrate the beginning of their forever
+        </p>
+
+      </div>
+
+      <!-- Scroll prompt -->
+      <div class="scroll-indicator">
+        <span>SCROLL DOWN</span>
+        <div class="scroll-mouse"></div>
+      </div>
+    </section>
+
+    <!-- Ornamental Divider -->
+    <div class="ornament-divider">
+      <div class="ornament-line"></div>
+      <span class="ornament-center">❖</span>
+      <div class="ornament-line"></div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------
+         FORMAL INVITATION & PARENTS CARD
+         ---------------------------------------------------------------------- -->
+    <section class="invitation-card-section">
+      <div class="card-frame fade-in-up">
+        
+        <p class="card-title-eyebrow">WITH THE BLESSINGS OF ALLAH</p>
+        
+        <h3 class="parents-heading">
+          MR. JAWAID SHAMSI &amp; DR. RANA SHAMSI
+        </h3>
+        
+        <p class="parents-subtext">
+          joyfully invite you to celebrate the
+        </p>
+
+        <span class="ceremony-badge gold-text">Reception Ceremony</span>
+        
+        <p class="beloved-label">OF THEIR BELOVED SON</p>
+
+        <!-- Groom & Bride Details -->
+        <div class="couple-details-grid">
+          
+          <!-- The Groom -->
+          <div class="person-box">
+            <p class="person-role">The Groom</p>
+            <h4 class="person-name gold-text">KAMRAN SHAMSI</h4>
+            <p class="person-relation">Son of</p>
+            <p class="person-parents">
+              <strong>Dr. Mrs. Rana Shamsi</strong><br />
+              &amp; <strong>Mr. Jawaid Shamsi</strong>
+            </p>
+          </div>
+
+          <!-- Ampersand -->
+          <div style="font-family: var(--font-script); font-size: 2.5rem; color: var(--gold-primary); margin: -10px 0;">
+            &amp;
+          </div>
+
+          <!-- The Bride -->
+          <div class="person-box">
+            <p class="person-role">The Bride</p>
+            <h4 class="person-name gold-text">DR. AMNA UBAID</h4>
+            <p class="person-relation">Daughter of</p>
+            <p class="person-parents">
+              <strong>Late Mrs. Akhtar Fatima</strong><br />
+              &amp; <strong>Mr. Arshad Ubaid</strong>
+            </p>
+            <p class="person-address">Koyala Vihar, Bardwan Compound, Ranchi</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         LAKESIDE PALACE ARCHITECTURAL FEATURE (CARD 07)
+         ---------------------------------------------------------------------- -->
+    <section class="palace-feature-section fade-in-up">
+      <div class="palace-card">
+        <div class="palace-img-wrap">
+          <img src="images/palace_lakeside.jpg" alt="Royal Palace by Lake" class="palace-img" />
+          <div class="palace-overlay">
+            <p class="palace-caption-eyebrow">PLEASE JOIN US FOR A</p>
+            <h3 class="palace-caption-title">Royal Celebration</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ornamental Divider -->
+    <div class="ornament-divider">
+      <div class="ornament-line"></div>
+      <span class="ornament-center">❦</span>
+      <div class="ornament-line"></div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------
+         SCRATCH & REVEAL SECTION: RECEPTION DATE (CLIENT'S EXPLICIT REQUIREMENT)
+         ---------------------------------------------------------------------- -->
+    <section class="scratch-section">
+      <div class="scratch-header fade-in-up">
+        <p class="scratch-eyebrow">SAVE THE AUSPICIOUS DATE</p>
+        <h3 class="scratch-title gold-text">Scratch &amp; Reveal</h3>
+        <p class="scratch-instruction">Rub the golden foil below with your finger or mouse to uncover the reception date</p>
+      </div>
+
+      <!-- The Scratch Card Container -->
+      <div class="scratch-container fade-in-up">
+        
+        <!-- Revealed Content Layer (Underneath Canvas) -->
+        <div class="scratch-revealed-content">
+          <p class="revealed-eyebrow">WEDDING RECEPTION</p>
+          <p class="revealed-day">THURSDAY</p>
+          <div class="revealed-number gold-text">29<sup style="font-size: 0.5em; vertical-align: super;">TH</sup></div>
+          <p class="revealed-month-year">OCTOBER 2026</p>
+          
+          <div class="revealed-time-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>7:30 PM ONWARDS · FOLLOWED BY DINNER</span>
+          </div>
+        </div>
+
+        <!-- HTML5 Canvas Scratch Layer -->
+        <canvas id="scratchCanvas"></canvas>
+
+        <!-- Celebration Confetti Layer -->
+        <div id="scratchCelebration" class="scratch-celebration"></div>
+
+      </div>
+
+      <!-- Scratch Action Controls -->
+      <div class="scratch-controls fade-in-up">
+        <span id="scratchProgressText" class="scratch-progress-text">0% Uncovered</span>
+        <button id="btnRevealInstant" class="btn-reveal-instant" type="button">✨ Reveal Date Instantly</button>
+      </div>
+
+      <!-- Live Countdown Timer -->
+      <div class="countdown-wrap fade-in-up">
+        <p class="countdown-label">COUNTDOWN TO THE CELEBRATION</p>
+        <div class="countdown-grid">
+          <div class="countdown-item">
+            <div id="countdownDays" class="countdown-val gold-text">--</div>
+            <div class="countdown-unit">Days</div>
+          </div>
+          <div class="countdown-item">
+            <div id="countdownHours" class="countdown-val gold-text">--</div>
+            <div class="countdown-unit">Hours</div>
+          </div>
+          <div class="countdown-item">
+            <div id="countdownMins" class="countdown-val gold-text">--</div>
+            <div class="countdown-unit">Mins</div>
+          </div>
+          <div class="countdown-item">
+            <div id="countdownSecs" class="countdown-val gold-text">--</div>
+            <div class="countdown-unit">Secs</div>
+          </div>
+        </div>
+
+        <!-- Add to Calendar Buttons -->
+        <div class="calendar-btn-wrap">
+          <a id="btnGoogleCal" href="#" class="btn-calendar">
+            <svg viewBox="0 0 24 24">
+              <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+            </svg>
+            Add to Google Calendar
+          </a>
+          <a id="btnICal" href="#" class="btn-calendar" style="background: rgba(197, 160, 89, 0.15); border: 1.5px solid var(--gold-primary); color: var(--gold-dark);">
+            Apple / Outlook iCal
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Ornamental Divider -->
+    <div class="ornament-divider">
+      <div class="ornament-line"></div>
+      <span class="ornament-center">❖</span>
+      <div class="ornament-line"></div>
+    </div>
+
+    <!-- ----------------------------------------------------------------------
+         ROYAL PROGRAMME / ITINERARY (NO DRESS CODE - AS REQUESTED)
+         ---------------------------------------------------------------------- -->
+    <section class="programme-section">
+      <div class="timeline-card fade-in-up">
+        
+        <div style="text-align: center; margin-bottom: 20px;">
+          <p class="card-title-eyebrow">ORDER OF CELEBRATION</p>
+          <h3 class="parents-heading gold-text" style="font-size: 1.65rem;">Royal Programme</h3>
+        </div>
+
+        <div class="timeline-list">
+          
+          <!-- Event 1 -->
+          <div class="timeline-item">
+            <div class="timeline-icon-wrap">✦</div>
+            <div class="timeline-details">
+              <div class="timeline-time">07:30 PM</div>
+              <h4 class="timeline-name">Function Commences</h4>
+              <p class="timeline-desc">Warm reception of all guests &amp; family gathering</p>
+            </div>
+          </div>
+
+          <!-- Event 2 -->
+          <div class="timeline-item">
+            <div class="timeline-icon-wrap">👑</div>
+            <div class="timeline-details">
+              <div class="timeline-time">08:00 PM</div>
+              <h4 class="timeline-name">Grand Arrival of Bride &amp; Groom</h4>
+              <p class="timeline-desc">Welcoming Dr. Amna &amp; Kamran to the royal stage</p>
+            </div>
+          </div>
+
+          <!-- Event 3 -->
+          <div class="timeline-item">
+            <div class="timeline-icon-wrap">🍽️</div>
+            <div class="timeline-details">
+              <div class="timeline-time">09:00 PM</div>
+              <h4 class="timeline-name">Royal Dinner Banquet</h4>
+              <p class="timeline-desc">A lavish feast celebrated with beloved family &amp; friends</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         VENUE & GOOGLE MAPS
+         ---------------------------------------------------------------------- -->
+    <section class="venue-section">
+      <div class="venue-card fade-in-up">
+        
+        <div class="venue-icon-emblem">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+          </svg>
+        </div>
+
+        <p class="card-title-eyebrow">CEREMONY VENUE</p>
+        <h3 class="venue-club-name gold-text">RANCHI CLUB</h3>
+        <p class="venue-address">Main Road, Ranchi (Jharkhand)</p>
+
+        <div class="venue-actions">
+          <a href="https://www.google.com/maps/search/?api=1&query=Ranchi+Club+Main+Road+Ranchi+Jharkhand" target="_blank" rel="noopener noreferrer" class="btn-venue-map">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+            View on Google Maps
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         INTERACTIVE SKY LANTERN & CANDLE BLESSINGS (CLIENT REQUIREMENT)
+         "add lather to sen bllessings in last" / "yes (lit candles to send blessings)"
+         ---------------------------------------------------------------------- -->
+    <section class="lantern-section">
+      <div class="lantern-sky-overlay"></div>
+      
+      <!-- Interactive Physics Canvas for Flying Lanterns & Candles -->
+      <canvas id="lanternCanvas"></canvas>
+
+      <div class="lantern-content">
+        
+        <div class="lantern-crescent">🌙 🏮</div>
+        <p class="lantern-eyebrow">HEARTFELT DUAS &amp; WISHES</p>
+        <h3 class="lantern-title gold-text">Light a Candle &amp; Release a Lantern</h3>
+        <p class="lantern-subtext">
+          Send your sincere blessings and prayers into the heavens for Kamran &amp; Dr. Amna. Watch your lantern ascend with your dua!
+        </p>
+
+        <!-- Interactive Blessing Submission Form -->
+        <div class="blessing-form-card fade-in-up">
+          <form id="blessingForm">
+            
+            <div class="form-group">
+              <label class="form-label" for="guestName">Your Name / Family</label>
+              <input type="text" id="guestName" class="form-input" placeholder="e.g. Tariq Shamsi & Family" required maxlength="30" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="guestBlessing">Your Blessing or Dua</label>
+              <textarea id="guestBlessing" class="form-textarea" rows="2" placeholder="May Allah bless this beautiful union with love, peace, and prosperity..." maxlength="180"></textarea>
+              
+              <!-- Quick Dua selection chips -->
+              <div class="quick-duas">
+                <span class="dua-chip" data-text="Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair 🤲✨">Barakallahu Lakuma 🤲</span>
+                <span class="dua-chip" data-text="Wishing you both an eternity of love, laughter, and endless blessings! 💫">Endless Love &amp; Joy ✨</span>
+                <span class="dua-chip" data-text="May Allah SWT grant you a beautiful life full of peace and happiness. 🌸">Duas for Peace 🌸</span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-release-lantern">
+              🏮 Light Candle &amp; Release Lantern ✦
+            </button>
+
+          </form>
+        </div>
+
+        <!-- Blessing Counter Badge -->
+        <div class="blessings-counter-wrap fade-in-up">
+          <span class="blessings-counter-num" id="blessingsCount">158</span>
+          <span class="blessings-counter-text">Blessings Floating in Heaven ✨</span>
+        </div>
+
+        <!-- Live Blessings Feed / Wall -->
+        <div class="blessings-wall fade-in-up">
+          <p class="blessings-wall-title">✦ Recent Duas From Loved Ones ✦</p>
+          <div id="blessingsWallList" class="blessings-scroll-list">
+            <!-- Populated dynamically via js/lantern.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         QUOTE & BLESSINGS MESSAGE (CARD 10 & 12)
+         ---------------------------------------------------------------------- -->
+    <section class="quote-section fade-in-up">
+      <div class="quote-ornament">✦ ❦ ✦</div>
+      <p class="quote-message gold-text">
+        "We cannot wait to celebrate this beautiful occasion with your presence, love, and blessings."
+      </p>
+      <div style="width: 60px; height: 1.5px; background: var(--gold-primary); margin: 0 auto 20px;"></div>
+      <p style="font-family: var(--font-royal); font-size: 0.75rem; letter-spacing: 0.32em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 8px;">
+        WITH LOVE
+      </p>
+      <div class="quote-signature">Amna &amp; Kamran</div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         RSVP & WITH BEST COMPLIMENTS
+         ---------------------------------------------------------------------- -->
+    <section class="rsvp-section">
+      <div class="rsvp-card fade-in-up">
+        
+        <p class="rsvp-eyebrow">R. S. V. P.</p>
+        <p class="rsvp-relatives">All Relatives &amp; Friends</p>
+
+        <div class="compliments-wrap">
+          <p class="compliments-label">With Best Compliments From:</p>
+          <h4 class="compliments-host">Mr. Jawaid Shamsi</h4>
+          <p class="compliments-phone">MOB: +91 9955611945</p>
+        </div>
+
+        <div class="rsvp-btn-row">
+          <!-- WhatsApp RSVP -->
+          <a href="https://wa.me/919955611945?text=Dear%20Mr.%20Jawaid%20Shamsi,%20we%20warmly%20confirm%20our%20presence%20to%20celebrate%20the%20reception%20of%20Kamran%20and%20Amna." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-rsvp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67Z"/>
+            </svg>
+            RSVP on WhatsApp
+          </a>
+
+          <!-- Direct Call RSVP -->
+          <a href="tel:+919955611945" class="btn-call-rsvp">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+            Call: +91 9955611945
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ----------------------------------------------------------------------
+         FOOTER
+         ---------------------------------------------------------------------- -->
+    <footer class="invite-footer">
+      <div class="footer-monogram gold-text">A &amp; K</div>
+      <p class="footer-credits">
+        KAMRAN &amp; AMNA · 29 OCTOBER 2026 · RANCHI
+      </p>
+    </footer>
+
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/scratch.js"></script>
+  <script src="js/lantern.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
