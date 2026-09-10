@@ -375,18 +375,41 @@
     animationFrameId = requestAnimationFrame(loop);
   }
 
-  // Handle Form Submission
+  // Handle Form Submission (Clicking release button sends lantern immediately with or without input)
+  var randomGuestNames = [
+    'Well-wisher',
+    'Beloved Guest',
+    'Family & Friends',
+    'Warm Blessings',
+    'Loving Guest'
+  ];
+
+  var randomBlessings = [
+    "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair. Wishing Kamran & Dr. Amna endless love! 🤲✨",
+    "May Allah SWT bestow infinite happiness, peace, and mutual respect upon your beautiful marriage. 🕊️💖",
+    "Heartiest congratulations! Wishing both of you an eternity of laughter, good health, and joyful companionship. 💫🌸",
+    "May your home forever be filled with love, mercy, and divine blessings. 🤲✨",
+    "Endless duas and heartfelt prayers for a radiant, blissful journey together! 🪔🕊️"
+  ];
+
+  function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var name = (nameInput && nameInput.value.trim()) || 'Well-wisher';
-      var text = (messageInput && messageInput.value.trim()) || 'Barakallahu lakuma! Wishing you both a lifetime of happiness and blessings. 🤲✨';
+      var enteredName = nameInput ? nameInput.value.trim() : '';
+      var enteredBlessing = messageInput ? messageInput.value.trim() : '';
+
+      var name = enteredName || getRandomItem(randomGuestNames);
+      var text = enteredBlessing || getRandomItem(randomBlessings);
 
       // 1. Play celestial chime
       playCelestialChime();
 
-      // 2. Spawn personalized flying lantern
+      // 2. Spawn personalized flying lantern immediately
       spawnUserLantern(name);
 
       // 3. Increment counter
@@ -403,26 +426,30 @@
 
       var list = getStoredBlessings();
       list.unshift(newBlessing);
-      if (list.length > 50) list.pop(); // Keep manageable
+      if (list.length > 50) list.pop();
       try {
         localStorage.setItem(STORAGE_KEY_BLESSINGS, JSON.stringify(list));
       } catch (err) {}
 
       renderBlessingItem(newBlessing, true);
 
-      // 5. Reset inputs & show brief success feedback
+      // 5. Instant visual feedback on button
       var submitBtn = form.querySelector('.btn-release-lantern');
-      var originalText = submitBtn ? submitBtn.innerHTML : '';
       if (submitBtn) {
-        submitBtn.innerHTML = '✨ Lantern Released Into Heavens! ✨';
+        var originalHtml = submitBtn.innerHTML;
+        submitBtn.innerHTML = '✨ Lantern Ascending to Heavens! 🕊️';
         submitBtn.style.background = 'linear-gradient(135deg, #FFE082, #FFD54F)';
+        submitBtn.style.transform = 'scale(0.97)';
         setTimeout(function () {
-          submitBtn.innerHTML = originalText;
+          submitBtn.innerHTML = originalHtml;
           submitBtn.style.background = '';
-        }, 3000);
+          submitBtn.style.transform = '';
+        }, 2200);
       }
 
-      if (messageInput) messageInput.value = '';
+      if (messageInput && enteredBlessing) {
+        messageInput.value = '';
+      }
     });
   }
 

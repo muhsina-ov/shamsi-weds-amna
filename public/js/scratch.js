@@ -66,17 +66,17 @@
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
       
-      ctx.font = '700 13px "Cinzel", Georgia, serif';
-      ctx.fillStyle = 'rgba(50, 30, 10, 0.85)';
+      ctx.font = '800 13.5px "Cinzel", Georgia, serif';
+      ctx.fillStyle = '#050201';
       ctx.shadowColor = 'rgba(255, 245, 200, 0.9)';
-      ctx.shadowBlur = 4;
+      ctx.shadowBlur = 3;
       ctx.shadowOffsetX = 1;
       ctx.shadowOffsetY = 1;
       ctx.letterSpacing = '3px';
       ctx.fillText('✨ ROYAL RECEPTION DATE ✨', w / 2, h / 2 - 16);
 
-      ctx.font = '600 11px "Outfit", sans-serif';
-      ctx.fillStyle = 'rgba(70, 45, 15, 0.9)';
+      ctx.font = '700 11.5px "Outfit", sans-serif';
+      ctx.fillStyle = '#080301';
       ctx.shadowBlur = 2;
       ctx.fillText('SCRATCH WITH FINGER OR MOUSE TO REVEAL', w / 2, h / 2 + 14);
 

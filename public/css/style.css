@@ -9,25 +9,25 @@
   --bg-ivory-light: #FBF8F2;
   --bg-ivory-cream: #F5EFEB;
   --bg-ivory-warm: #EFE6D8;
-  --bg-card: rgba(255, 253, 249, 0.88);
-  --bg-card-dark: rgba(25, 20, 18, 0.82);
+  --bg-card: rgba(255, 253, 249, 0.94);
+  --bg-card-dark: rgba(25, 20, 18, 0.88);
 
-  --gold-primary: #C5A059;
-  --gold-light: #E7C986;
-  --gold-dark: #8C6D2D;
-  --gold-antique: #A67D2B;
-  --gold-metallic: linear-gradient(135deg, #BF953F 0%, #FCF6BA 25%, #B38728 50%, #FBF5B7 75%, #AA771C 100%);
-  --gold-foil-glow: 0 0 25px rgba(212, 175, 55, 0.45);
+  --gold-primary: #8E651E;
+  --gold-light: #E0BA6E;
+  --gold-dark: #382006;
+  --gold-antique: #4A2E08;
+  --gold-metallic: linear-gradient(135deg, #6B470C 0%, #B8860B 28%, #573807 55%, #A6781E 80%, #472D04 100%);
+  --gold-foil-glow: 0 0 25px rgba(184, 134, 11, 0.45);
 
-  --text-dark: #2B2119;
-  --text-muted: #6E5A4A;
-  --text-gold: #966F28;
+  --text-dark: #0A0502;
+  --text-muted: #1F130B;
+  --text-gold: #4A2E08;
   --text-light: #FAF5ED;
 
-  --border-gold: rgba(197, 160, 89, 0.45);
-  --border-gold-light: rgba(197, 160, 89, 0.25);
+  --border-gold: rgba(166, 125, 43, 0.5);
+  --border-gold-light: rgba(166, 125, 43, 0.3);
   --border-radius-card: 20px;
-  --box-shadow-luxury: 0 20px 45px -15px rgba(50, 35, 20, 0.12), 0 8px 18px -6px rgba(50, 35, 20, 0.08);
+  --box-shadow-luxury: 0 20px 45px -15px rgba(50, 35, 20, 0.16), 0 8px 18px -6px rgba(50, 35, 20, 0.1);
   --box-shadow-glow: 0 0 40px rgba(197, 160, 89, 0.25);
 
   --font-arabic: 'Amiri', serif;
@@ -360,27 +360,28 @@ body {
 
 .bismillah-english {
   font-family: var(--font-royal);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--text-muted);
-  font-weight: 600;
+  color: #120904;
+  font-weight: 700;
 }
 
 .insha-allah-badge {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-style: italic;
-  color: var(--gold-dark);
+  color: #241405;
+  font-weight: 600;
   margin-bottom: 12px;
   letter-spacing: 0.05em;
 }
 
 .parents-blessings {
   font-family: var(--font-body);
-  font-size: 0.8rem;
-  line-height: 1.55;
-  color: var(--text-muted);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: #120904;
   max-width: 90%;
   margin: 0 auto 20px;
   font-style: italic;
@@ -388,20 +389,20 @@ body {
 
 .parents-blessings span {
   display: block;
-  font-weight: 600;
-  color: var(--text-dark);
-  font-size: 0.85rem;
+  font-weight: 700;
+  color: #140C07;
+  font-size: 0.88rem;
   margin-top: 3px;
 }
 
 .together-families {
   font-family: var(--font-royal);
-  font-size: 0.72rem;
+  font-size: 0.74rem;
   letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: #241405;
   margin-bottom: 18px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 /* Couple Names Display */
@@ -412,10 +413,11 @@ body {
 .hero-name {
   font-family: var(--font-royal);
   font-size: clamp(2.3rem, 7.5vw, 3.2rem);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.04em;
   line-height: 1.1;
   text-transform: uppercase;
+  filter: drop-shadow(0 2px 3px rgba(35, 20, 8, 0.22));
 }
 
 .hero-ampersand {
@@ -424,14 +426,15 @@ body {
   color: var(--gold-primary);
   display: block;
   margin: -8px 0;
-  text-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+  text-shadow: 0 0 25px rgba(184, 134, 11, 0.4);
 }
 
 .hero-tagline {
   font-family: var(--font-serif);
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   font-style: italic;
-  color: var(--text-muted);
+  color: #120904;
+  font-weight: 500;
   max-width: 85%;
   margin: 10px auto 25px;
   line-height: 1.5;
@@ -749,26 +752,27 @@ body {
 
 .scratch-eyebrow {
   font-family: var(--font-royal);
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
+  font-size: 0.74rem;
+  letter-spacing: 0.34em;
   text-transform: uppercase;
-  color: var(--gold-dark);
-  font-weight: 700;
+  color: #1A0D03;
+  font-weight: 800;
   margin-bottom: 6px;
 }
 
 .scratch-title {
   font-family: var(--font-serif);
-  font-size: 2.1rem;
-  font-weight: 700;
-  color: var(--text-dark);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #140C07;
   line-height: 1.2;
 }
 
 .scratch-instruction {
   font-family: var(--font-body);
-  font-size: 0.84rem;
-  color: var(--text-muted);
+  font-size: 0.88rem;
+  color: #0A0502;
+  font-weight: 700;
   margin-top: 6px;
 }
 
@@ -781,7 +785,7 @@ body {
   aspect-ratio: 16 / 11;
   border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 25px 50px -12px rgba(80, 55, 25, 0.25), 0 0 0 1.5px var(--border-gold);
+  box-shadow: 0 25px 50px -12px rgba(60, 40, 15, 0.3), 0 0 0 2px rgba(166, 125, 43, 0.6);
   background: #FFF;
 }
 
@@ -790,7 +794,7 @@ body {
   position: absolute;
   inset: 0;
   z-index: 1;
-  background: linear-gradient(135deg, #FCF8F2 0%, #F8EFE2 50%, #F2E5D0 100%);
+  background: linear-gradient(135deg, #FAF6EE 0%, #F5EDE0 50%, #EFE3CE 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -802,38 +806,43 @@ body {
 
 .revealed-eyebrow {
   font-family: var(--font-royal);
-  font-size: 0.72rem;
+  font-size: 0.76rem;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: #1A0D03;
   font-weight: 800;
   margin-bottom: 6px;
 }
 
 .revealed-day {
   font-family: var(--font-royal);
-  font-size: 0.95rem;
-  letter-spacing: 0.22em;
+  font-size: 1.05rem;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--text-dark);
-  font-weight: 700;
+  color: #080301;
+  font-weight: 900;
 }
 
 .revealed-number {
   font-family: var(--font-serif);
-  font-size: clamp(3.2rem, 11vw, 4.4rem);
-  font-weight: 700;
+  font-size: clamp(3.5rem, 12vw, 4.8rem);
+  font-weight: 900;
   line-height: 0.95;
   margin: 4px 0;
+  color: #080301;
+  background: none;
+  -webkit-background-clip: initial;
+  -webkit-text-fill-color: #080301;
+  filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.2));
 }
 
 .revealed-month-year {
   font-family: var(--font-royal);
-  font-size: 1.15rem;
+  font-size: 1.22rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
-  font-weight: 700;
-  color: var(--text-dark);
+  font-weight: 800;
+  color: #140C07;
   margin-bottom: 10px;
 }
 
@@ -841,15 +850,15 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 6px 16px;
+  padding: 7px 18px;
   border-radius: 20px;
-  background: rgba(197, 160, 89, 0.15);
-  border: 1px solid var(--border-gold);
+  background: rgba(166, 125, 43, 0.22);
+  border: 1.5px solid #2B1602;
   font-family: var(--font-sans);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--gold-dark);
-  letter-spacing: 0.05em;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #140C07;
+  letter-spacing: 0.06em;
 }
 
 /* Scratchable Canvas Layer */
@@ -887,28 +896,29 @@ body {
 }
 
 .btn-reveal-instant {
-  background: transparent;
-  border: 1px dashed var(--gold-primary);
-  color: var(--gold-dark);
-  padding: 8px 18px;
+  background: rgba(166, 125, 43, 0.12);
+  border: 1.5px dashed #6E4D12;
+  color: #140C07;
+  padding: 8px 20px;
   border-radius: 20px;
   font-family: var(--font-sans);
-  font-size: 0.78rem;
-  font-weight: 500;
+  font-size: 0.8rem;
+  font-weight: 700;
   letter-spacing: 0.08em;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .btn-reveal-instant:hover {
-  background: rgba(197, 160, 89, 0.12);
-  border-color: var(--gold-antique);
+  background: rgba(166, 125, 43, 0.22);
+  border-color: #1A0D03;
 }
 
 .scratch-progress-text {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #0A0502;
 }
 
 /* --------------------------------------------------------------------------
@@ -921,12 +931,12 @@ body {
 
 .countdown-label {
   font-family: var(--font-royal);
-  font-size: 0.68rem;
+  font-size: 0.72rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--gold-dark);
+  color: #1A0D03;
   margin-bottom: 12px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .countdown-grid {
@@ -939,26 +949,27 @@ body {
 
 .countdown-item {
   background: var(--bg-card);
-  border: 1px solid rgba(197, 160, 89, 0.35);
+  border: 1.5px solid rgba(166, 125, 43, 0.45);
   border-radius: 14px;
   padding: 12px 6px;
-  box-shadow: 0 6px 16px rgba(100, 75, 45, 0.08);
+  box-shadow: 0 6px 16px rgba(50, 35, 15, 0.1);
 }
 
 .countdown-val {
   font-family: var(--font-serif);
-  font-size: 1.85rem;
-  font-weight: 700;
+  font-size: 1.95rem;
+  font-weight: 800;
   line-height: 1;
-  color: var(--text-dark);
+  color: #140C07;
 }
 
 .countdown-unit {
   font-family: var(--font-sans);
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--text-muted);
+  color: #0A0502;
+  font-weight: 700;
   margin-top: 4px;
 }
 
@@ -976,7 +987,7 @@ body {
   padding: 10px 20px;
   border-radius: 25px;
   background: var(--gold-metallic);
-  color: #1F150E;
+  color: #080301;
   font-family: var(--font-royal);
   font-size: 0.72rem;
   font-weight: 700;
@@ -1333,7 +1344,7 @@ body {
   border: none;
   border-radius: 30px;
   background: var(--gold-metallic);
-  color: #21150A;
+  color: #080301;
   font-family: var(--font-royal);
   font-size: 0.82rem;
   font-weight: 800;
