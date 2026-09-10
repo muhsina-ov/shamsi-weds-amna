@@ -407,27 +407,36 @@
       </div>
     </section>
 
+    <!-- Ornamental Divider -->
+    <div class="ornament-divider">
+      <div class="ornament-line"></div>
+      <span class="ornament-center">❖</span>
+      <div class="ornament-line"></div>
+    </div>
+
     <!-- ----------------------------------------------------------------------
          INTERACTIVE SKY LANTERN & CANDLE BLESSINGS (CLIENT REQUIREMENT)
          "add lather to sen bllessings in last" / "yes (lit candles to send blessings)"
          ---------------------------------------------------------------------- -->
     <section class="lantern-section">
-      <div class="lantern-sky-overlay"></div>
       
-      <!-- Interactive Physics Canvas for Flying Lanterns & Candles -->
+      <!-- Interactive Physics Canvas for Flying Lanterns Floating Over Card -->
       <canvas id="lanternCanvas"></canvas>
 
-      <div class="lantern-content">
+      <div class="lantern-card fade-in-up">
         
-        <div class="lantern-crescent">🌙 🏮</div>
-        <p class="lantern-eyebrow">HEARTFELT DUAS &amp; BLESSINGS</p>
-        <h3 class="lantern-title gold-text">Release a Sky Lantern</h3>
-        <p class="lantern-subtext">
-          Tap the button below to send a glowing sky lantern with your sincere blessings and prayers for Kamran &amp; Dr. Amna into the heavens!
+        <div class="lantern-icon-emblem">
+          <span style="font-size: 1.8rem; line-height: 1;">🪔</span>
+        </div>
+
+        <p class="card-title-eyebrow">HEARTFELT DUAS &amp; BLESSINGS</p>
+        <h3 class="venue-club-name gold-text" style="margin-bottom: 8px;">Release a Sky Lantern</h3>
+        <p class="venue-address" style="max-width: 480px; margin: 0 auto 24px; font-size: 0.98rem; font-style: normal; color: var(--text-muted);">
+          Tap the button below to send a glowing sky lantern with your sincere prayers into the heavens for Kamran &amp; Dr. Amna!
         </p>
 
         <!-- Pure Interactive Button (No Form Fields) -->
-        <div class="lantern-action-box fade-in-up">
+        <div class="lantern-action-box">
           <button id="btnReleaseLantern" class="btn-release-lantern-glow" type="button" aria-label="Release a Sky Lantern">
             <span class="btn-lantern-icon">🪔</span>
             <span class="btn-lantern-text">Release Sky Lantern</span>
@@ -436,13 +445,20 @@
         </div>
 
         <!-- Lantern Counter Badge -->
-        <div class="blessings-counter-wrap fade-in-up">
+        <div class="blessings-counter-wrap">
           <span class="blessings-counter-num" id="blessingsCount">159</span>
           <span class="blessings-counter-text">Lanterns Floating in Heaven ✨</span>
         </div>
 
       </div>
     </section>
+
+    <!-- Ornamental Divider -->
+    <div class="ornament-divider">
+      <div class="ornament-line"></div>
+      <span class="ornament-center">❖</span>
+      <div class="ornament-line"></div>
+    </div>
 
     <!-- ----------------------------------------------------------------------
          QUOTE & BLESSINGS MESSAGE (CARD 10 & 12)

@@ -204,19 +204,18 @@
     var w = rect.width;
     var h = rect.height;
 
-    // Launch directly from bottom edge (comes from bottom to top)
-    // Distributed across bottom width
+    // Launch from below the bottom edge (comes from bottom to top)
     var startX = Math.random() * (w * 0.7) + (w * 0.15);
-    var startY = h + 50; // Starts below viewport bottom edge!
+    var startY = h + 60;
 
-    var lanternSize = Math.random() * 10 + 46; // ~46px to 56px
+    var lanternSize = Math.random() * 10 + 48; // ~48px to 58px
 
     lanterns.push({
       x: startX,
       y: startY,
       width: lanternSize,
       height: lanternSize * 1.36,
-      speedY: Math.random() * 0.5 + 1.9, // Smooth ascending speed from bottom to top
+      speedY: Math.random() * 0.4 + 2.1, // Smooth ascending speed from bottom to top
       swayOffset: Math.random() * Math.PI * 2,
       swaySpeed: Math.random() * 0.02 + 0.02,
       swayAmount: Math.random() * 18 + 14,
@@ -271,17 +270,25 @@
     ctx.quadraticCurveTo(currentX + halfW * 1.15, currentY, currentX + topW, currentY - halfH);
     ctx.closePath();
 
-    // Body Gradient
+    // Shadow underneath for definition against light background
+    ctx.shadowColor = 'rgba(90, 45, 10, 0.28)';
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetY = 4;
+
+    // Body Gradient - Warm luminous amber/gold
     var bodyGrad = ctx.createLinearGradient(currentX, currentY - halfH, currentX, currentY + halfH);
-    bodyGrad.addColorStop(0, '#FFE899');
-    bodyGrad.addColorStop(0.6, '#FFAA33');
-    bodyGrad.addColorStop(1, '#FF7700');
+    bodyGrad.addColorStop(0, '#FFE082');
+    bodyGrad.addColorStop(0.5, '#FFA000');
+    bodyGrad.addColorStop(1, '#E65100');
     ctx.fillStyle = bodyGrad;
     ctx.fill();
 
-    // Delicate golden ribbing
-    ctx.strokeStyle = 'rgba(255, 240, 180, 0.65)';
-    ctx.lineWidth = l.isUserLantern ? 1.5 : 1;
+    ctx.shadowBlur = 0;
+    ctx.shadowOffsetY = 0;
+
+    // Delicate warm bronze ribbing
+    ctx.strokeStyle = 'rgba(140, 60, 0, 0.65)';
+    ctx.lineWidth = l.isUserLantern ? 1.6 : 1.1;
     ctx.stroke();
 
     // Inner Flame Core
@@ -325,7 +332,7 @@
       s.alpha += Math.sin(timestamp * s.twinkleSpeed) * 0.02;
       s.alpha = Math.max(0.15, Math.min(0.9, s.alpha));
 
-      ctx.fillStyle = 'rgba(255, 245, 210, ' + s.alpha + ')';
+      ctx.fillStyle = 'rgba(184, 134, 11, ' + (s.alpha * 0.38) + ')';
       ctx.beginPath();
       ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
       ctx.fill();
@@ -344,7 +351,7 @@
         continue;
       }
 
-      ctx.fillStyle = 'rgba(255, 220, 120, ' + pt.alpha + ')';
+      ctx.fillStyle = 'rgba(215, 120, 20, ' + pt.alpha + ')';
       ctx.beginPath();
       ctx.arc(pt.x, pt.y, pt.radius, 0, Math.PI * 2);
       ctx.fill();

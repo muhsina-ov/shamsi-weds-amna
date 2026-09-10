@@ -1185,286 +1185,130 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   INTERACTIVE SKY LANTERN & CANDLE BLESSINGS (CLIENT REQUIREMENT)
-   "add lather to sen bllessings in last" / "yes (lit candles to send blessings)"
+   INTERACTIVE SKY LANTERN SECTION (LIGHT ROYAL THEME MATCHING REST OF SITE)
    -------------------------------------------------------------------------- */
 .lantern-section {
   position: relative;
-  min-height: 850px;
-  padding: 60px 20px 40px;
-  color: #FFF;
+  min-height: 560px;
+  padding: 40px 20px;
+  color: #0A0502;
   overflow: hidden;
-  background: #0A0812 url('../images/night_lanterns_sky.jpg') center bottom / cover no-repeat;
+  background: linear-gradient(180deg, #FAF7F2 0%, #F4ECE0 100%);
 }
 
-.lantern-sky-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(8, 6, 16, 0.88) 0%, rgba(12, 10, 24, 0.7) 40%, rgba(15, 12, 28, 0.92) 100%);
-  z-index: 1;
-}
-
-/* Sky Canvas for Physics-driven Floating Lanterns & Candles */
+/* Sky Canvas for Physics-driven Floating Lanterns Over Section */
 #lanternCanvas {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 4;
   pointer-events: none;
 }
 
-.lantern-content {
+.lantern-card {
   position: relative;
   z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.lantern-crescent {
-  font-size: 2rem;
-  color: var(--gold-light);
-  margin-bottom: 8px;
-  animation: gentlePulse 3s ease-in-out infinite;
-}
-
-.lantern-eyebrow {
-  font-family: var(--font-royal);
-  font-size: 0.72rem;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  font-weight: 700;
-  margin-bottom: 6px;
-}
-
-.lantern-title {
-  font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 7vw, 3rem);
-  font-weight: 700;
-  line-height: 1.15;
-  margin-bottom: 12px;
-}
-
-.lantern-subtext {
-  font-family: var(--font-body);
-  font-size: 0.88rem;
-  color: rgba(255, 255, 255, 0.8);
-  max-width: 440px;
-  margin: 0 auto 28px;
-  line-height: 1.6;
-}
-
-/* Interactive Candle / Lantern Lighting Form */
-.blessing-form-card {
-  width: 100%;
-  max-width: 450px;
-  background: rgba(25, 20, 35, 0.75);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(212, 175, 55, 0.4);
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-gold);
   border-radius: var(--border-radius-card);
-  padding: 30px 22px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5), 0 0 30px rgba(197, 160, 89, 0.2);
-  text-align: left;
+  padding: 38px 24px;
+  text-align: center;
+  box-shadow: var(--box-shadow-luxury);
+  max-width: 560px;
+  margin: 0 auto;
 }
 
-.form-group {
-  margin-bottom: 18px;
-}
-
-.form-label {
-  display: block;
-  font-family: var(--font-royal);
-  font-size: 0.68rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  font-weight: 600;
-  margin-bottom: 6px;
-}
-
-.form-input, .form-textarea {
-  width: 100%;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.3);
-  border-radius: 12px;
-  padding: 12px 16px;
-  color: #FFF;
-  font-family: var(--font-body);
-  font-size: 0.92rem;
-  transition: all 0.3s ease;
-  outline: none;
-}
-
-.form-input:focus, .form-textarea:focus {
-  border-color: var(--gold-light);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-}
-
-.form-input::placeholder, .form-textarea::placeholder {
-  color: rgba(255, 255, 255, 0.45);
-}
-
-/* Quick Dua selection pills */
-.quick-duas {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-
-.dua-chip {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.25);
-  border-radius: 18px;
-  padding: 5px 12px;
-  font-family: var(--font-sans);
-  font-size: 0.72rem;
-  color: rgba(255, 255, 255, 0.85);
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-
-.dua-chip:hover, .dua-chip.active {
-  background: rgba(212, 175, 55, 0.25);
-  border-color: var(--gold-light);
-  color: #FFF;
-}
-
-.btn-release-lantern {
-  width: 100%;
+.lantern-icon-emblem {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(166, 125, 43, 0.14);
+  border: 1.5px solid var(--border-gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  padding: 14px 20px;
-  border: none;
-  border-radius: 30px;
-  background: var(--gold-metallic);
+  box-shadow: 0 4px 14px rgba(166, 125, 43, 0.15);
+}
+
+.lantern-action-box {
+  margin: 12px 0 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-release-lantern-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border: 1.5px solid #6E4D12;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #FFE082 0%, #D4AF37 38%, #B8860B 70%, #F5D77F 100%);
   color: #080301;
   font-family: var(--font-royal);
-  font-size: 0.82rem;
+  font-size: 0.94rem;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
   cursor: pointer;
-  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.45);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 10px 28px rgba(120, 80, 20, 0.25), 0 2px 8px rgba(166, 125, 43, 0.35);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: lanternButtonPulse 2.8s infinite ease-in-out;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.btn-release-lantern:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.65);
+.btn-release-lantern-glow:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 38px rgba(100, 60, 15, 0.35), 0 0 25px rgba(212, 175, 55, 0.5);
 }
 
-.btn-release-lantern:active {
-  transform: scale(0.98);
+.btn-release-lantern-glow:active {
+  transform: translateY(1px) scale(0.96);
 }
 
-/* Blessing Counter Badge */
+.btn-lantern-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.btn-lantern-sparkle {
+  font-size: 1.15rem;
+  line-height: 1;
+  animation: sparkleRotate 3s infinite linear;
+}
+
+/* Blessing Counter Badge - Light Theme */
 .blessings-counter-wrap {
-  margin-top: 24px;
+  margin-top: 10px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 20px;
+  padding: 9px 24px;
   border-radius: 30px;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(166, 125, 43, 0.14);
+  border: 1.5px solid rgba(110, 77, 18, 0.4);
+  box-shadow: 0 4px 14px rgba(60, 40, 15, 0.08);
 }
 
 .blessings-counter-num {
   font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--gold-light);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #080301;
 }
 
 .blessings-counter-text {
   font-family: var(--font-royal);
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-/* Blessings Wall / Feed */
-.blessings-wall {
-  width: 100%;
-  max-width: 450px;
-  margin-top: 28px;
-  text-align: left;
-}
-
-.blessings-wall-title {
-  font-family: var(--font-royal);
-  font-size: 0.72rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--gold-light);
-  margin-bottom: 12px;
-  text-align: center;
-}
-
-.blessings-scroll-list {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  max-height: 240px;
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-/* Custom Scrollbar for blessings */
-.blessings-scroll-list::-webkit-scrollbar {
-  width: 4px;
-}
-.blessings-scroll-list::-webkit-scrollbar-thumb {
-  background: rgba(212, 175, 55, 0.35);
-  border-radius: 4px;
-}
-
-.blessing-card-item {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(212, 175, 55, 0.2);
-  border-radius: 12px;
-  padding: 12px 16px;
-  animation: fadeInBlessing 0.6s ease;
-}
-
-@keyframes fadeInBlessing {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.blessing-author {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 4px;
-}
-
-.blessing-author-name {
-  font-family: var(--font-royal);
-  font-size: 0.78rem;
-  color: var(--gold-light);
-  font-weight: 700;
-}
-
-.blessing-time {
-  font-size: 0.65rem;
-  color: rgba(255, 255, 255, 0.45);
-}
-
-.blessing-text {
-  font-family: var(--font-serif);
-  font-size: 0.92rem;
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
-  font-style: italic;
+  color: #120904;
+  font-weight: 800;
 }
 
 /* --------------------------------------------------------------------------
