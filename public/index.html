@@ -420,52 +420,25 @@
       <div class="lantern-content">
         
         <div class="lantern-crescent">🌙 🏮</div>
-        <p class="lantern-eyebrow">HEARTFELT DUAS &amp; WISHES</p>
-        <h3 class="lantern-title gold-text">Light a Candle &amp; Release a Lantern</h3>
+        <p class="lantern-eyebrow">HEARTFELT DUAS &amp; BLESSINGS</p>
+        <h3 class="lantern-title gold-text">Release a Sky Lantern</h3>
         <p class="lantern-subtext">
-          Send your sincere blessings and prayers into the heavens for Kamran &amp; Dr. Amna. Watch your lantern ascend with your dua!
+          Tap the button below to send a glowing sky lantern with your sincere blessings and prayers for Kamran &amp; Dr. Amna into the heavens!
         </p>
 
-        <!-- Interactive Blessing Submission Form -->
-        <div class="blessing-form-card fade-in-up">
-          <form id="blessingForm" novalidate>
-            
-            <div class="form-group">
-              <label class="form-label" for="guestName">Your Name / Family (Optional)</label>
-              <input type="text" id="guestName" class="form-input" placeholder="Your Name or Family (Optional)" maxlength="30" />
-            </div>
-
-            <div class="form-group">
-              <label class="form-label" for="guestBlessing">Your Blessing or Dua (Optional)</label>
-              <textarea id="guestBlessing" class="form-textarea" rows="2" placeholder="Send blessings directly by tapping release below, or write a personal dua... (Optional)" maxlength="180"></textarea>
-              
-              <!-- Quick Dua selection chips -->
-              <div class="quick-duas">
-                <span class="dua-chip" data-text="Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair 🤲✨">Barakallahu Lakuma 🤲</span>
-                <span class="dua-chip" data-text="Wishing you both an eternity of love, laughter, and endless blessings! 💫">Endless Love &amp; Joy ✨</span>
-                <span class="dua-chip" data-text="May Allah SWT grant you a beautiful life full of peace and happiness. 🌸">Duas for Peace 🌸</span>
-              </div>
-            </div>
-
-            <button type="submit" class="btn-release-lantern">
-              🏮 Light Candle &amp; Release Lantern ✦
-            </button>
-
-          </form>
+        <!-- Pure Interactive Button (No Form Fields) -->
+        <div class="lantern-action-box fade-in-up">
+          <button id="btnReleaseLantern" class="btn-release-lantern-glow" type="button" aria-label="Release a Sky Lantern">
+            <span class="btn-lantern-icon">🪔</span>
+            <span class="btn-lantern-text">Release Sky Lantern</span>
+            <span class="btn-lantern-sparkle">✨</span>
+          </button>
         </div>
 
-        <!-- Blessing Counter Badge -->
+        <!-- Lantern Counter Badge -->
         <div class="blessings-counter-wrap fade-in-up">
-          <span class="blessings-counter-num" id="blessingsCount">158</span>
-          <span class="blessings-counter-text">Blessings Floating in Heaven ✨</span>
-        </div>
-
-        <!-- Live Blessings Feed / Wall -->
-        <div class="blessings-wall fade-in-up">
-          <p class="blessings-wall-title">✦ Recent Duas From Loved Ones ✦</p>
-          <div id="blessingsWallList" class="blessings-scroll-list">
-            <!-- Populated dynamically via js/lantern.js -->
-          </div>
+          <span class="blessings-counter-num" id="blessingsCount">159</span>
+          <span class="blessings-counter-text">Lanterns Floating in Heaven ✨</span>
         </div>
 
       </div>

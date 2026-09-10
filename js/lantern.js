@@ -95,13 +95,13 @@
   }
 
   function initBlessingsWall() {
+    updateCounter(getStoredCount());
     if (!wallList) return;
     wallList.innerHTML = '';
     var list = getStoredBlessings();
     list.forEach(function (b) {
       renderBlessingItem(b, false);
     });
-    updateCounter(getStoredCount());
   }
 
   // Handle Quick Dua pills click
@@ -199,27 +199,30 @@
     });
   }
 
-  function spawnUserLantern(authorName) {
+  function spawnUserLantern() {
     var rect = canvas.getBoundingClientRect();
     var w = rect.width;
     var h = rect.height;
 
-    // Launch from near center bottom
-    var startX = w / 2 + (Math.random() * 60 - 30);
-    var startY = h - 60;
+    // Launch directly from bottom edge (comes from bottom to top)
+    // Distributed across bottom width
+    var startX = Math.random() * (w * 0.7) + (w * 0.15);
+    var startY = h + 50; // Starts below viewport bottom edge!
+
+    var lanternSize = Math.random() * 10 + 46; // ~46px to 56px
 
     lanterns.push({
       x: startX,
       y: startY,
-      width: 44,
-      height: 60,
-      speedY: 1.1,
-      swayOffset: 0,
-      swaySpeed: 0.035,
-      swayAmount: 22,
+      width: lanternSize,
+      height: lanternSize * 1.36,
+      speedY: Math.random() * 0.5 + 1.9, // Smooth ascending speed from bottom to top
+      swayOffset: Math.random() * Math.PI * 2,
+      swaySpeed: Math.random() * 0.02 + 0.02,
+      swayAmount: Math.random() * 18 + 14,
       opacity: 1,
       isUserLantern: true,
-      text: authorName.substring(0, 16)
+      text: 'K & A'
     });
   }
 
@@ -352,10 +355,9 @@
       var lantern = lanterns[l];
       lantern.y -= lantern.speedY;
 
-      // Slow down user lantern as it ascends into the heavens
-      if (lantern.isUserLantern && lantern.y < h * 0.4) {
-        lantern.speedY = Math.max(0.4, lantern.speedY * 0.995);
-        lantern.opacity = Math.max(0.2, lantern.y / (h * 0.4));
+      // User lantern glides smoothly from bottom to top of the sky
+      if (lantern.isUserLantern && lantern.y < h * 0.2) {
+        lantern.opacity = Math.max(0.15, lantern.y / (h * 0.2));
       }
 
       drawLantern(lantern, timestamp * 0.001);
@@ -375,81 +377,47 @@
     animationFrameId = requestAnimationFrame(loop);
   }
 
-  // Handle Form Submission (Clicking release button sends lantern immediately with or without input)
-  var randomGuestNames = [
-    'Well-wisher',
-    'Beloved Guest',
-    'Family & Friends',
-    'Warm Blessings',
-    'Loving Guest'
-  ];
-
-  var randomBlessings = [
-    "Barakallahu lakuma wa baraka alaikuma wa jama'a bainakuma fee khair. Wishing Kamran & Dr. Amna endless love! 🤲✨",
-    "May Allah SWT bestow infinite happiness, peace, and mutual respect upon your beautiful marriage. 🕊️💖",
-    "Heartiest congratulations! Wishing both of you an eternity of laughter, good health, and joyful companionship. 💫🌸",
-    "May your home forever be filled with love, mercy, and divine blessings. 🤲✨",
-    "Endless duas and heartfelt prayers for a radiant, blissful journey together! 🪔🕊️"
-  ];
-
-  function getRandomItem(arr) {
-    return arr[Math.floor(Math.random() * arr.length)];
-  }
-
-  if (form) {
-    form.addEventListener('submit', function (e) {
+    // Handle Lantern Button Click (1-click to release lantern coming from bottom to top)
+  var releaseBtn = document.getElementById('btnReleaseLantern') || document.querySelector('.btn-release-lantern-glow') || document.querySelector('.btn-release-lantern');
+  if (releaseBtn) {
+    releaseBtn.addEventListener('click', function (e) {
       e.preventDefault();
 
-      var enteredName = nameInput ? nameInput.value.trim() : '';
-      var enteredBlessing = messageInput ? messageInput.value.trim() : '';
-
-      var name = enteredName || getRandomItem(randomGuestNames);
-      var text = enteredBlessing || getRandomItem(randomBlessings);
-
-      // 1. Play celestial chime
+      // 1. Play celestial harmonic chime
       playCelestialChime();
 
-      // 2. Spawn personalized flying lantern immediately
-      spawnUserLantern(name);
+      // 2. Spawn glowing sky lantern rising from bottom to top
+      spawnUserLantern();
 
       // 3. Increment counter
       var newCount = getStoredCount() + 1;
       localStorage.setItem(STORAGE_KEY_COUNT, newCount.toString());
       updateCounter(newCount);
 
-      // 4. Save to list
-      var newBlessing = {
-        name: name,
-        text: text,
-        time: 'Just now'
-      };
-
-      var list = getStoredBlessings();
-      list.unshift(newBlessing);
-      if (list.length > 50) list.pop();
-      try {
-        localStorage.setItem(STORAGE_KEY_BLESSINGS, JSON.stringify(list));
-      } catch (err) {}
-
-      renderBlessingItem(newBlessing, true);
-
-      // 5. Instant visual feedback on button
-      var submitBtn = form.querySelector('.btn-release-lantern');
-      if (submitBtn) {
-        var originalHtml = submitBtn.innerHTML;
-        submitBtn.innerHTML = '✨ Lantern Ascending to Heavens! 🕊️';
-        submitBtn.style.background = 'linear-gradient(135deg, #FFE082, #FFD54F)';
-        submitBtn.style.transform = 'scale(0.97)';
+      // 4. Instant visual confirmation on button
+      var btnText = releaseBtn.querySelector('.btn-lantern-text');
+      if (btnText) {
+        var originalText = btnText.textContent;
+        btnText.textContent = '✨ Lantern Ascending! 🕊️';
+        releaseBtn.style.transform = 'scale(0.96)';
         setTimeout(function () {
-          submitBtn.innerHTML = originalHtml;
-          submitBtn.style.background = '';
-          submitBtn.style.transform = '';
-        }, 2200);
+          btnText.textContent = originalText;
+          releaseBtn.style.transform = '';
+        }, 1800);
       }
+    });
+  }
 
-      if (messageInput && enteredBlessing) {
-        messageInput.value = '';
-      }
+  // Also tap anywhere on sky canvas to launch extra lanterns
+  if (canvas) {
+    canvas.style.pointerEvents = 'auto';
+    canvas.style.cursor = 'pointer';
+    canvas.addEventListener('click', function (e) {
+      playCelestialChime();
+      spawnUserLantern();
+      var newCount = getStoredCount() + 1;
+      localStorage.setItem(STORAGE_KEY_COUNT, newCount.toString());
+      updateCounter(newCount);
     });
   }
 

@@ -1665,3 +1665,74 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Lantern Interactive Action Box */
+.lantern-action-box {
+  margin: 18px 0 22px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-release-lantern-glow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 36px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, #FFE082 0%, #D4AF37 38%, #B8860B 70%, #F5D77F 100%);
+  color: #120902;
+  font-family: var(--font-royal);
+  font-size: 0.94rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5), 0 0 25px rgba(255, 215, 0, 0.35);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  animation: lanternButtonPulse 2.8s infinite ease-in-out;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.btn-release-lantern-glow:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 16px 42px rgba(212, 175, 55, 0.75), 0 0 35px rgba(255, 220, 100, 0.6);
+}
+
+.btn-release-lantern-glow:active {
+  transform: translateY(1px) scale(0.96);
+  box-shadow: 0 6px 18px rgba(212, 175, 55, 0.4);
+}
+
+.btn-lantern-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.btn-lantern-sparkle {
+  font-size: 1.15rem;
+  line-height: 1;
+  animation: sparkleRotate 3s infinite linear;
+}
+
+@keyframes lanternButtonPulse {
+  0%, 100% {
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5), 0 0 20px rgba(255, 215, 0, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.8), 0 0 35px rgba(255, 225, 120, 0.6);
+    transform: scale(1.025);
+  }
+}
+
+@keyframes sparkleRotate {
+  0% { transform: rotate(0deg) scale(1); }
+  50% { transform: rotate(180deg) scale(1.2); }
+  100% { transform: rotate(360deg) scale(1); }
+}
